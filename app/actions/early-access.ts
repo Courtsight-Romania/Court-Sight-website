@@ -23,8 +23,17 @@ const Schema = z.object({
   consimtamant: z.literal("on", {
     message: "Avem nevoie de acordul tău ca să te putem contacta.",
   }),
-  // Câmp-capcană: invizibil pentru oameni, completat de roboți.
-  website: z.string().max(0).optional().or(z.literal("")),
+  /* Câmp-capcană: invizibil pentru oameni, completat de roboți.
+
+     Acceptă orice valoare la validare, intenționat. Dacă l-am respinge aici,
+     robotul ar primi o eroare — adică exact indiciul că a fost prins, pe care
+     l-ar folosi ca să reîncerce cu câmpul gol. Decizia se ia după parsare, iar
+     răspunsul e identic cu cel primit de un om.
+
+     Are și un efect practic: unele managere de parole completează automat
+     câmpurile numite „website". Un om în situația asta ar fi fost respins fără
+     să vadă vreun mesaj, pentru că eroarea ar fi apărut pe un câmp ascuns. */
+  website: z.string().optional(),
 });
 
 export type FormState = {
