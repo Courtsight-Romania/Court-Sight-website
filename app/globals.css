@@ -1,26 +1,203 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------------------
+   CourtSight — sistem de design „Ink & Amber"
+   Registru: raport de instanță tipărit. Cerneală, hârtie caldă, hairline 1px.
+   Chihlimbarul e accent UNIC: doar CTA primar și indicatori de alertă.
+--------------------------------------------------------------------------- */
+
+@theme {
+  /* Suprafețe */
+  --color-ink: oklch(17% 0.022 255);
+  --color-ink-2: oklch(22% 0.024 255);
+  --color-ink-3: oklch(27% 0.024 255);
+  --color-paper: oklch(97.5% 0.008 85);
+  --color-paper-2: oklch(100% 0 0);
+
+  /* Text pe hârtie */
+  --color-fg: oklch(21% 0.02 255);
+  --color-fg-muted: oklch(48% 0.015 255);
+  /* Tonurile „faint" sunt folosite pe eyebrow-uri de 11px și pe note mici,
+     deci trebuie să treacă AA la text normal, nu doar la text mare. Valorile
+     de mai jos sunt măsurate: 4.9:1 pe hârtie, 5.1:1 pe cerneală. */
+  --color-fg-faint: oklch(52% 0.014 255);
+
+  /* Text pe cerneală */
+  --color-on-ink: oklch(94% 0.006 85);
+  --color-on-ink-muted: oklch(72% 0.012 255);
+  --color-on-ink-faint: oklch(63% 0.014 255);
+
+  /* Accente */
+  --color-amber: oklch(76% 0.142 72);
+  --color-amber-hi: oklch(84% 0.115 78);
+  --color-amber-deep: oklch(57% 0.135 62);
+  --color-signal: oklch(64% 0.1 168);
+  --color-danger: oklch(58% 0.18 27);
+
+  /* Linii */
+  --color-hairline: oklch(87% 0.01 85);
+  --color-hairline-strong: oklch(78% 0.014 85);
+  --color-hairline-ink: oklch(30% 0.02 255);
+  --color-hairline-ink-strong: oklch(38% 0.022 255);
+
+  /* Tipografie */
+  --font-display: var(--font-newsreader), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  --radius-card: 0.75rem;
+
+  /* Ritm de secțiune */
+  --spacing-section: 7rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* --------------------------------------------------------------------------- */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklch, var(--color-amber) 35%, transparent);
+    color: inherit;
+  }
+
+  /* Titlurile poartă tot caracterul editorial */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+
+  /* Ancorele de secțiune nu trebuie să treacă pe sub nav-ul sticky */
+  :where(section[id], div[id]) {
+    scroll-margin-top: 5.5rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-amber);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* Grain: împiedică suprafețele mari de cerneală să pară plate.
+     SVG inline — zero request, zero fișier. */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Eyebrow — eticheta mică, spațiată, de deasupra fiecărui titlu de secțiune */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* Numerele de dosar sunt întotdeauna mono, cu cifre tabulare */
+  .tnum {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+}
+
+/* Keyframes folosite de demo-ul din hero și de banda de instanțe. Prefixate
+   `cs-` ca să nu se ciocnească cu utilitarele Tailwind. */
+
+@keyframes cs-caret {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cs-rise {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cs-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Accordion-ul Radix expune înălțimea conținutului ca variabilă CSS, deci
+   putem anima deschiderea fără JavaScript. */
+@keyframes cs-expand {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes cs-collapse {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes cs-pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

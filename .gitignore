@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Originalele generate cu Gemini. Se păstrează local pentru regenerări,
+# nu se deployează — versiunile optimizate stau în public/img și public/video.
+/assets-source

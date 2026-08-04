@@ -1,0 +1,58 @@
+/**
+ * Instanțe reale din România, pentru banda derulantă din secțiunea de surse.
+ *
+ * Aici nu inventăm nimic: sunt nume de instanțe care există efectiv pe
+ * portal.just.ro. Lista e un eșantion din cele patru niveluri de jurisdicție —
+ * Înalta Curte, cele 15 curți de apel, tribunalele județene (inclusiv cele
+ * specializate) și o parte dintre judecătorii.
+ */
+export const COURTS = [
+  "Înalta Curte de Casație și Justiție",
+  "Curtea de Apel București",
+  "Curtea de Apel Cluj",
+  "Curtea de Apel Iași",
+  "Curtea de Apel Timișoara",
+  "Curtea de Apel Craiova",
+  "Curtea de Apel Constanța",
+  "Curtea de Apel Brașov",
+  "Curtea de Apel Alba Iulia",
+  "Curtea de Apel Oradea",
+  "Curtea de Apel Galați",
+  "Curtea de Apel Ploiești",
+  "Curtea de Apel Pitești",
+  "Curtea de Apel Suceava",
+  "Curtea de Apel Bacău",
+  "Curtea de Apel Târgu Mureș",
+  "Tribunalul București",
+  "Tribunalul Cluj",
+  "Tribunalul Specializat Cluj",
+  "Tribunalul Iași",
+  "Tribunalul Timiș",
+  "Tribunalul Dolj",
+  "Tribunalul Constanța",
+  "Tribunalul Brașov",
+  "Tribunalul Bihor",
+  "Tribunalul Argeș",
+  "Tribunalul Prahova",
+  "Tribunalul Sibiu",
+  "Tribunalul Mureș",
+  "Tribunalul Galați",
+  "Tribunalul Ilfov",
+  "Judecătoria Cluj-Napoca",
+  "Judecătoria Sectorului 1 București",
+  "Judecătoria Sectorului 3 București",
+  "Judecătoria Sectorului 6 București",
+  "Judecătoria Iași",
+  "Judecătoria Timișoara",
+  "Judecătoria Brașov",
+  "Judecătoria Constanța",
+  "Judecătoria Craiova",
+  "Judecătoria Oradea",
+  "Judecătoria Sibiu",
+  "Judecătoria Buftea",
+  "Judecătoria Ploiești",
+  "Judecătoria Baia Mare",
+  "Judecătoria Arad",
+  "Judecătoria Pitești",
+  "Judecătoria Suceava",
+] as const;
