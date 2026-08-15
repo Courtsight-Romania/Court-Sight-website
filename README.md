@@ -16,6 +16,7 @@ npm run build   # verificare completă, inclusiv TypeScript
 | Telefon și email reale | [`lib/contact.ts`](lib/contact.ts) | Acum sunt valori de umplutură |
 | Domeniul final | `SITE_URL` din [`lib/contact.ts`](lib/contact.ts) | Intră în canonical, OG și sitemap |
 | Conexiunea Supabase | `.env.local` după [`.env.example`](.env.example) | Fără ea, formularul trimite la contactul direct |
+| Adresa aplicației | `NEXT_PUBLIC_URL_APP` în `.env.local` (implicit `https://app.courtsight.ro`) | Unde duce butonul „Intră în cont" din bară, din meniul de telefon și din subsol. **Se citește la BUILD, nu la pornire** — Next.js inlinează variabilele `NEXT_PUBLIC_*` în bundle, deci după ce o schimbi trebuie `npm run build` din nou, nu doar restart |
 | Textele legale | `app/termeni`, `app/confidentialitate`, `app/gdpr` | Sunt schițe. Trebuie redactate de un avocat |
 | Ștergerea paginii `/brand` | [`app/brand`](app/brand) | Pagină internă de verificare a identității |
 

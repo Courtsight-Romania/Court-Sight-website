@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Logo } from "@/components/site/logo";
 import { ButtonLink } from "@/components/site/ui/button";
 import { Container } from "@/components/site/ui/primitives";
+import { APP_URL } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
@@ -59,7 +60,13 @@ export function Nav() {
             ))}
           </nav>
 
-          <div className="hidden md:block">
+          {/* „Intră în cont" e discret (contur), „Cere acces" rămâne acțiunea
+              chihlimbar: pe un site de prezentare, majoritatea vizitatorilor nu
+              au încă un cont. Cine are, îl caută oricum aici. */}
+          <div className="hidden items-center gap-3 md:flex">
+            <ButtonLink href={APP_URL} variant="outlineInk" className="h-9 px-4 text-sm">
+              Intră în cont
+            </ButtonLink>
             <ButtonLink href="#acces" className="h-9 px-4 text-sm">
               Cere acces timpuriu
             </ButtonLink>
@@ -111,8 +118,16 @@ export function Nav() {
                   {l.label}
                 </a>
               ))}
-              <ButtonLink href="#acces" onClick={() => setOpen(false)} className="my-5">
+              <ButtonLink href="#acces" onClick={() => setOpen(false)} className="mt-5">
                 Cere acces timpuriu
+              </ButtonLink>
+              <ButtonLink
+                href={APP_URL}
+                variant="outlineInk"
+                onClick={() => setOpen(false)}
+                className="mb-5 mt-3"
+              >
+                Intră în cont
               </ButtonLink>
             </nav>
           </Container>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/site/logo";
-import { CONTACT } from "@/lib/contact";
+import { APP_URL, CONTACT } from "@/lib/contact";
 import { Container } from "@/components/site/ui/primitives";
 
 const COLUMNS = [
@@ -11,6 +11,7 @@ const COLUMNS = [
       { href: "#cum-functioneaza", label: "Cum funcționează" },
       { href: "#surse", label: "Surse de date" },
       { href: "#intrebari", label: "Întrebări frecvente" },
+      { href: APP_URL, label: "Intră în cont" },
     ],
   },
   {
