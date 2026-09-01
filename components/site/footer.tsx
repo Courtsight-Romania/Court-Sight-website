@@ -26,7 +26,7 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="grain relative isolate border-t border-hairline-ink bg-ink text-on-ink">
+    <footer className="tone-ink grain relative isolate border-t border-hairline-ink bg-ink text-on-ink">
       <Container className="py-14 sm:py-16">
         <div className="grid gap-12 md:grid-cols-[minmax(0,1.4fr)_repeat(2,minmax(0,1fr))]">
           <div className="max-w-sm">

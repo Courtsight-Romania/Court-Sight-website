@@ -32,23 +32,29 @@ export default async function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#181d26",
+          background: "#0e100e",
           padding: 72,
           fontFamily: "Newsreader",
         }}
       >
         {/* marca + wordmark */}
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          {/* Aceeași geometrie ca `components/site/logo.tsx`, cu hex în clar:
+              generatorul de OG rulează pe Edge și nu vede variabilele CSS. */}
           <svg width="46" height="46" viewBox="0 0 24 24" fill="none">
-            <g stroke="#e8e5de" strokeWidth="1.6" strokeLinecap="butt" opacity="0.72">
-              <path d="M2.2 7.2V2.2h5" />
-              <path d="M16.8 2.2h5v5" />
-              <path d="M21.8 16.8v5h-5" />
-              <path d="M7.2 21.8h-5v-5" />
-            </g>
-            <path d="M8.8 18.6 15.2 5.4" stroke="#e0a03c" strokeWidth="2.3" strokeLinecap="butt" />
+            <rect x="2" y="2" width="20" height="20" rx="5.4" stroke="#f4f6f3" strokeWidth="2.1" />
+            <path
+              d="M6.0 11.1 C9.1 11.4, 11.2 13.4, 12 15.5 L12 17.2 C10.7 15.7, 8.6 16.8, 6.0 16.8 Z"
+              fill="#f4f6f3"
+            />
+            <path
+              d="M18.0 11.1 C14.9 11.4, 12.8 13.4, 12 15.5 L12 17.2 C13.3 15.7, 15.4 16.8, 18.0 16.8 Z"
+              fill="#f4f6f3"
+            />
+            <circle cx="12" cy="9.5" r="2.45" stroke="#d8f2aa" strokeWidth="1.5" />
+            <path d="M12 11.95 V14.7" stroke="#d8f2aa" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
-          <span style={{ fontSize: 34, color: "#e8e5de", letterSpacing: "-0.02em" }}>
+          <span style={{ fontSize: 34, color: "#f4f6f3", letterSpacing: "-0.02em" }}>
             CourtSight
           </span>
         </div>
@@ -59,7 +65,7 @@ export default async function Image() {
               display: "flex",
               fontSize: 68,
               lineHeight: 1.08,
-              color: "#e8e5de",
+              color: "#f4f6f3",
               letterSpacing: "-0.025em",
               maxWidth: 940,
             }}
@@ -71,7 +77,7 @@ export default async function Image() {
               display: "flex",
               marginTop: 30,
               fontSize: 27,
-              color: "#9aa2b0",
+              color: "#b4bcb4",
               fontFamily: "GeistMono",
               letterSpacing: "-0.01em",
             }}
@@ -87,12 +93,12 @@ export default async function Image() {
             gap: 16,
             fontFamily: "GeistMono",
             fontSize: 20,
-            color: "#6d7686",
-            borderTop: "1px solid #2b3240",
+            color: "#8d968d",
+            borderTop: "1px solid #262b26",
             paddingTop: 26,
           }}
         >
-          <span style={{ color: "#e0a03c" }}>1234/117/2024</span>
+          <span style={{ color: "#d8f2aa" }}>1234/117/2024</span>
           <span>·</span>
           <span>Tribunalul Cluj</span>
           <span>·</span>

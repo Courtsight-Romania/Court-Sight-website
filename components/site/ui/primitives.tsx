@@ -20,7 +20,9 @@ export function Section({
       id={id}
       className={cn(
         "relative isolate",
-        isInk && "grain bg-ink text-on-ink",
+        /* `tone-ink` nu pictează nimic; comută inelul de focus pe lime în
+           globals.css. Vezi comentariul de la :focus-visible. */
+        isInk && "tone-ink grain bg-ink text-on-ink",
         tone === "paper" && "bg-paper",
         tone === "paper-2" && "bg-paper-2",
         className,

@@ -36,7 +36,7 @@ export function Nav() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 bg-ink/90 text-on-ink backdrop-blur-md transition-colors",
+        "tone-ink sticky top-0 z-50 bg-ink/90 text-on-ink backdrop-blur-md transition-colors",
         scrolled ? "border-b border-hairline-ink" : "border-b border-transparent",
       )}
     >
@@ -61,7 +61,7 @@ export function Nav() {
           </nav>
 
           {/* „Intră în cont" e discret (contur), „Cere acces" rămâne acțiunea
-              chihlimbar: pe un site de prezentare, majoritatea vizitatorilor nu
+              accentuată: pe un site de prezentare, majoritatea vizitatorilor nu
               au încă un cont. Cine are, îl caută oricum aici. */}
           <div className="hidden items-center gap-3 md:flex">
             <ButtonLink href={APP_URL} variant="outlineInk" className="h-9 px-4 text-sm">

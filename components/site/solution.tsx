@@ -31,9 +31,9 @@ function MockSearch() {
 
 function MockAlert() {
   return (
-    <div className="mt-6 rounded-[0.5rem] border border-amber/40 bg-amber/[0.06] p-3.5">
-      <p className="eyebrow flex items-center gap-2 text-amber-deep">
-        <span aria-hidden className="size-1.5 rounded-full bg-amber" />
+    <div className="mt-6 rounded-[0.5rem] border border-verde/40 bg-verde/[0.06] p-3.5">
+      <p className="eyebrow flex items-center gap-2 text-verde">
+        <span aria-hidden className="size-1.5 rounded-full bg-verde" />
         Dosar nou
       </p>
       <p className="mt-2.5 text-[0.8125rem] leading-relaxed text-fg">
@@ -63,7 +63,7 @@ function MockTimeline() {
               className={cn(
                 "mt-1 size-2 shrink-0 rounded-full",
                 s.state === "done" && "bg-signal",
-                s.state === "current" && "bg-amber",
+                s.state === "current" && "bg-verde",
                 s.state === "future" && "border border-hairline-strong bg-paper-2",
               )}
             />
@@ -131,7 +131,7 @@ export function Solution() {
               <p className="mt-3.5 text-[0.9375rem] leading-relaxed text-fg-muted">{f.body}</p>
               {f.mock}
               {f.caution && (
-                <p className="mt-6 border-l-2 border-amber pl-3.5 text-[0.8125rem] leading-relaxed text-fg-muted">
+                <p className="mt-6 border-l-2 border-verde pl-3.5 text-[0.8125rem] leading-relaxed text-fg-muted">
                   Ratarea unui termen de apel e una dintre cele mai frecvente forme de malpraxis.
                   Tocmai de aceea nu promitem un calcul exact acolo unde datele nu îl permit.
                 </p>

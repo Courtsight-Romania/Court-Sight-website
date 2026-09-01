@@ -22,7 +22,7 @@ const INTERESE = [
 const field =
   "h-11 w-full rounded-[0.4rem] border border-hairline-ink-strong bg-ink/50 px-3.5 " +
   "text-[0.9375rem] text-on-ink placeholder:text-on-ink-faint " +
-  "transition-colors focus:border-amber focus:outline-none";
+  "transition-colors focus:border-lime focus:outline-none";
 
 function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (
@@ -199,7 +199,7 @@ export function EarlyAccess() {
                     name="consimtamant"
                     type="checkbox"
                     required
-                    className="mt-1 size-4 shrink-0 accent-[var(--color-amber)]"
+                    className="mt-1 size-4 shrink-0 accent-[var(--color-lime)]"
                     aria-invalid={!!state.errors?.consimtamant}
                   />
                   <label

@@ -190,7 +190,7 @@ export function SearchDemo() {
               <span className="text-on-ink-faint">Caută un nume sau un număr de dosar…</span>
             )}
             {!reduced && view.step === "typing" && (
-              <span className="ml-px inline-block h-[1.05em] w-px translate-y-[0.15em] animate-[cs-caret_1s_steps(1)_infinite] bg-amber" />
+              <span className="ml-px inline-block h-[1.05em] w-px translate-y-[0.15em] animate-[cs-caret_1s_steps(1)_infinite] bg-lime" />
             )}
           </span>
           <span className="eyebrow hidden shrink-0 text-on-ink-faint sm:block">
@@ -261,7 +261,7 @@ export function SearchDemo() {
                     className={cn(
                       "rounded-[0.4rem] border px-3 py-1.5 text-sm transition-colors",
                       view.choice === o.id && at("answered")
-                        ? "border-amber bg-amber/15 text-amber-hi"
+                        ? "border-lime bg-lime/15 text-lime"
                         : "border-hairline-ink-strong text-on-ink-muted hover:border-on-ink-muted hover:text-on-ink",
                     )}
                   >
@@ -312,7 +312,7 @@ export function SearchDemo() {
               {/* L5 — watchlist */}
               <div
                 className={cn(
-                  "mt-2.5 flex items-start gap-3 rounded-[0.5rem] border border-amber/35 bg-amber/[0.07] p-3 transition-all duration-400",
+                  "mt-2.5 flex items-start gap-3 rounded-[0.5rem] border border-lime/35 bg-lime/[0.07] p-3 transition-all duration-400",
                   at("watching")
                     ? "translate-y-0 opacity-100"
                     : "pointer-events-none -translate-y-1 opacity-0",
@@ -320,10 +320,10 @@ export function SearchDemo() {
               >
                 <span
                   aria-hidden
-                  className="mt-1.5 size-1.5 shrink-0 rounded-full bg-amber"
+                  className="mt-1.5 size-1.5 shrink-0 rounded-full bg-lime"
                 />
                 <p className="text-[0.8125rem] leading-relaxed text-on-ink">
-                  <span className="font-medium text-amber-hi">{DEMO_ALERT.tip}</span>{" "}
+                  <span className="font-medium text-lime">{DEMO_ALERT.tip}</span>{" "}
                   <span className="tnum">
                     {DEMO_ALERT.data}, {DEMO_ALERT.ora}
                   </span>{" "}

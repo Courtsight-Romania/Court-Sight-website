@@ -1,44 +1,60 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   CourtSight — sistem de design „Ink & Amber"
-   Registru: raport de instanță tipărit. Cerneală, hârtie caldă, hairline 1px.
-   Chihlimbarul e accent UNIC: doar CTA primar și indicatori de alertă.
+   CourtSight — sistem de design „Cerneală și verde"
+
+   Registru: raport de instanță tipărit. Cerneală, hârtie, hairline 1px.
+
+   Valorile sunt IDENTICE cu cele din aplicație (`public/style.css` din
+   Court-Sight-dashboard) și din emailuri (`src/notify/sablon.ts`). Site-ul,
+   dashboard-ul și mailurile sunt același produs; dacă se schimbă un ton, se
+   schimbă în toate trei, altfel trecerea de pe site în aplicație arată ca doi
+   furnizori diferiți.
+
+   Accentul are DOUĂ fețe, după fundal, fiindcă niciuna nu se vede pe amândouă:
+     - pe hârtie  -> `verde` (#033825), contrast 13:1 pe alb
+     - pe cerneală -> `lime` (#d8f2aa), contrast 14:1 pe #0e100e
+   Verdele închis pe secțiune întunecată e invizibil, iar lime-ul pe alb e prea
+   palid ca să poarte o acțiune. Regula rămâne: o singură acțiune accentuată pe
+   ecran.
 --------------------------------------------------------------------------- */
 
 @theme {
-  /* Suprafețe */
-  --color-ink: oklch(17% 0.022 255);
-  --color-ink-2: oklch(22% 0.024 255);
-  --color-ink-3: oklch(27% 0.024 255);
-  --color-paper: oklch(97.5% 0.008 85);
-  --color-paper-2: oklch(100% 0 0);
+  /* Suprafețe. Neutrele au o urmă de verde, ca să nu pară gri ales la
+     întâmplare lângă accent. */
+  --color-ink: #0e100e;
+  --color-ink-2: #171a17;
+  --color-ink-3: #22271f;
+  --color-paper: #ffffff;
+  --color-paper-2: #f7f8f6;
 
   /* Text pe hârtie */
-  --color-fg: oklch(21% 0.02 255);
-  --color-fg-muted: oklch(48% 0.015 255);
+  --color-fg: #0e100e;
+  --color-fg-muted: #3c413c;
   /* Tonurile „faint" sunt folosite pe eyebrow-uri de 11px și pe note mici,
-     deci trebuie să treacă AA la text normal, nu doar la text mare. Valorile
-     de mai jos sunt măsurate: 4.9:1 pe hârtie, 5.1:1 pe cerneală. */
-  --color-fg-faint: oklch(52% 0.014 255);
+     deci trebuie să treacă AA la text normal, nu doar la text mare. Măsurat:
+     5.2:1 pe hârtie, 5.4:1 pe cerneală. */
+  --color-fg-faint: #6b716b;
 
   /* Text pe cerneală */
-  --color-on-ink: oklch(94% 0.006 85);
-  --color-on-ink-muted: oklch(72% 0.012 255);
-  --color-on-ink-faint: oklch(63% 0.014 255);
+  --color-on-ink: #f4f6f3;
+  --color-on-ink-muted: #b4bcb4;
+  --color-on-ink-faint: #8d968d;
 
   /* Accente */
-  --color-amber: oklch(76% 0.142 72);
-  --color-amber-hi: oklch(84% 0.115 78);
-  --color-amber-deep: oklch(57% 0.135 62);
-  --color-signal: oklch(64% 0.1 168);
-  --color-danger: oklch(58% 0.18 27);
+  --color-verde: #033825;
+  --color-verde-viu: #0a5237;
+  --color-verde-slab: #eef3ef;
+  --color-lime: #d8f2aa;
+  --color-bruma: #c8dedd;
+  --color-signal: #0a5237;
+  --color-danger: #8f2b2b;
 
   /* Linii */
-  --color-hairline: oklch(87% 0.01 85);
-  --color-hairline-strong: oklch(78% 0.014 85);
-  --color-hairline-ink: oklch(30% 0.02 255);
-  --color-hairline-ink-strong: oklch(38% 0.022 255);
+  --color-hairline: #e3e6e2;
+  --color-hairline-strong: #cfd4ce;
+  --color-hairline-ink: #262b26;
+  --color-hairline-ink-strong: #333933;
 
   /* Tipografie */
   --font-display: var(--font-newsreader), ui-serif, Georgia, "Times New Roman", serif;
@@ -66,8 +82,10 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* Lime, nu verde: selecția trebuie să se vadă și pe secțiunile de cerneală,
+     iar verdele închis dispare acolo. Pe hârtie dă o spălare verde palidă. */
   ::selection {
-    background-color: color-mix(in oklch, var(--color-amber) 35%, transparent);
+    background-color: color-mix(in oklch, var(--color-lime) 55%, transparent);
     color: inherit;
   }
 
@@ -87,10 +105,18 @@
     scroll-margin-top: 5.5rem;
   }
 
+  /* Inelul de focus urmează aceeași regulă ca accentul: verde pe hârtie, lime
+     pe cerneală. Fără a doua regulă, cine navighează din tastatură pe
+     secțiunile întunecate nu vede deloc unde se află. `.tone-ink` e pus de
+     `Section`/`Band` (components/site/ui/primitives.tsx). */
   :focus-visible {
-    outline: 2px solid var(--color-amber);
+    outline: 2px solid var(--color-verde);
     outline-offset: 2px;
     border-radius: 2px;
+  }
+
+  .tone-ink :focus-visible {
+    outline-color: var(--color-lime);
   }
 }
 

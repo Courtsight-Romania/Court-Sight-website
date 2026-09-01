@@ -36,7 +36,7 @@ export function HowItWorks() {
         <ol className="mt-14 grid gap-px overflow-hidden rounded-card border border-hairline-ink bg-hairline-ink md:grid-cols-3">
           {STEPS.map((s) => (
             <li key={s.n} className="bg-ink-2 p-7 sm:p-8">
-              <p className="tnum text-sm text-amber">{s.n}</p>
+              <p className="tnum text-sm text-lime">{s.n}</p>
               <h3 className="mt-5 text-xl leading-snug">{s.title}</h3>
               <p className="mt-3.5 text-[0.9375rem] leading-relaxed text-on-ink-muted">{s.body}</p>
             </li>

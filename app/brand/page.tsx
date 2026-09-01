@@ -36,8 +36,8 @@ export default function BrandPage() {
     <main className="mx-auto w-full max-w-5xl px-6 py-16 pb-32">
       <h1 className="text-4xl">Identitate CourtSight</h1>
       <p className="mt-5 max-w-2xl leading-relaxed text-fg-muted">
-        Patru colțuri de vizor — care sunt, în același timp, semnele de tăiere de pe un document
-        tipărit — străpunse de slash-ul din <span className="tnum">1234/117/2024</span>.
+        O carte deschisă cu o lupă coborâtă în cotor. Cartea e dosarul, lupa e „Sight". Marca e
+        monocromă: un singur tuș, ca să se comporte la fel pe hârtie, pe ecran și ștanțată.
       </p>
 
       <h2 className="mt-16 text-2xl">Marca, la scară</h2>
@@ -63,7 +63,7 @@ export default function BrandPage() {
       <h2 className="mt-16 text-2xl">Placa de favicon</h2>
       <p className="mt-3 max-w-2xl text-[0.9375rem] leading-relaxed text-fg-muted">
         La 16px colțurile devin noroi, așa că <span className="tnum">favicon.ico</span> conține
-        desene diferite pe dimensiuni: 16px doar cu slash-ul, 32 și 48px cu colțuri.
+        desene diferite pe dimensiuni: 16px fără cadru, 32 și 48px cu cadru.
       </p>
       <div className="mt-4">
         <Row label="cu colțuri · 32px+">
@@ -76,7 +76,7 @@ export default function BrandPage() {
         <Row label="fără colțuri · 16px">
           {[16, 32, 96].map((s) => (
             <Cell key={s} note={String(s)}>
-              <MarkTile withCorners={false} style={{ width: s, height: s }} />
+              <MarkTile withFrame={false} style={{ width: s, height: s }} />
             </Cell>
           ))}
         </Row>
@@ -87,7 +87,7 @@ export default function BrandPage() {
         <Row label="recomandat">
           <Logo />
         </Row>
-        <Row label="Sight chihlimbar">
+        <Row label="Sight lime">
           <Logo splitAccent />
         </Row>
       </div>
@@ -96,7 +96,7 @@ export default function BrandPage() {
           <Logo />
         </Row>
         <Row label="accent închis">
-          <Logo accent="deep" />
+          <Logo accent="verde" />
         </Row>
       </div>
 

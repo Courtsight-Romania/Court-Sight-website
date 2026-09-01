@@ -39,9 +39,9 @@ export function LegalPage({
 
           <div
             role="note"
-            className="mt-10 rounded-card border border-amber/50 bg-amber/[0.07] p-5"
+            className="mt-10 rounded-card border border-verde/50 bg-verde/[0.07] p-5"
           >
-            <p className="eyebrow text-amber-deep">Document în lucru</p>
+            <p className="eyebrow text-verde">Document în lucru</p>
             <p className="mt-3 text-[0.9375rem] leading-relaxed text-fg">
               Structura de mai jos e schița pe care urmează să o completeze un avocat specializat
               în protecția datelor și IT. Până atunci,{" "}

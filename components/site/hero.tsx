@@ -12,7 +12,7 @@ export function Hero() {
         className="pointer-events-none absolute -top-40 right-[-10%] -z-10 size-[46rem] rounded-full opacity-[0.16] blur-3xl"
         style={{
           background:
-            "radial-gradient(closest-side, var(--color-amber), transparent 70%)",
+            "radial-gradient(closest-side, var(--color-lime), transparent 70%)",
         }}
       />
 
@@ -22,7 +22,7 @@ export function Hero() {
             <p className="eyebrow inline-flex items-center gap-2.5 rounded-full border border-hairline-ink px-3 py-1.5 text-on-ink-muted">
               <span
                 aria-hidden
-                className="size-1.5 rounded-full bg-amber motion-safe:animate-[cs-pulse-dot_2.4s_ease-in-out_infinite]"
+                className="size-1.5 rounded-full bg-lime motion-safe:animate-[cs-pulse-dot_2.4s_ease-in-out_infinite]"
               />
               În dezvoltare · pilot cu case de avocatură
             </p>
