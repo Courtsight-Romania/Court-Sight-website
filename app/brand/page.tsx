@@ -51,7 +51,7 @@ export default function BrandPage() {
         </Row>
       </div>
       <div className="mt-2 rounded-card bg-ink px-8">
-        <Row label="pe cerneală">
+        <Row label="pe verde">
           {SIZES.map((s) => (
             <Cell key={s} note={String(s)}>
               <Mark className="text-on-ink" style={{ width: s, height: s }} />

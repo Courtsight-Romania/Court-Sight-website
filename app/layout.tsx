@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Newsreader } from "next/font/google";
-import { GeistSans } from "geist/font/sans";
+import { Archivo, Newsreader } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -11,6 +10,16 @@ import "./globals.css";
 const newsreader = Newsreader({
   subsets: ["latin", "latin-ext"],
   variable: "--font-newsreader",
+  display: "swap",
+});
+
+/* Archivo pentru text, sub serifa de titlu.
+   `latin-ext` NU e opțional: fără el, „ș”, „ț” și „ă” cad pe fontul de rezervă
+   al sistemului, iar într-un text românesc se vede imediat că trei litere sunt
+   din altă familie. */
+const archivo = Archivo({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-archivo",
   display: "swap",
 });
 
@@ -46,7 +55,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0e100e",
+  themeColor: "#033825",
   colorScheme: "dark light",
 };
 
@@ -82,7 +91,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="ro"
       data-scroll-behavior="smooth"
-      className={`${newsreader.variable} ${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}
+      className={`${newsreader.variable} ${archivo.variable} ${GeistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         {children}

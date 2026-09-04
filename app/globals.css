@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   CourtSight — sistem de design „Cerneală și verde"
+   CourtSight — sistem de design „Verde și hârtie"
 
-   Registru: raport de instanță tipărit. Cerneală, hârtie, hairline 1px.
+   Registru: raport de instanță tipărit. Verde de brand, hârtie, hairline 1px.
 
    Valorile sunt IDENTICE cu cele din aplicație (`public/style.css` din
    Court-Sight-dashboard) și din emailuri (`src/notify/sablon.ts`). Site-ul,
@@ -11,20 +11,23 @@
    schimbă în toate trei, altfel trecerea de pe site în aplicație arată ca doi
    furnizori diferiți.
 
-   Accentul are DOUĂ fețe, după fundal, fiindcă niciuna nu se vede pe amândouă:
-     - pe hârtie  -> `verde` (#033825), contrast 13:1 pe alb
-     - pe cerneală -> `lime` (#d8f2aa), contrast 14:1 pe #0e100e
-   Verdele închis pe secțiune întunecată e invizibil, iar lime-ul pe alb e prea
-   palid ca să poarte o acțiune. Regula rămâne: o singură acțiune accentuată pe
+   Suprafața închisă E verdele de brand (#033825), nu un neutru: navbar, hero,
+   footer și secțiunile întunecate poartă direct culoarea principală. Pe ea,
+   accentul nu mai poate fi verde — ar dispărea în fundal — deci acțiunea
+   accentuată e `lime` (#d8f2aa) cu text verde închis, aceeași pastilă din
+   materialele de promovare. Regula rămâne: o singură acțiune accentuată pe
    ecran.
+
+   Verdele închis rămâne accentul pentru secțiunile de hârtie (borduri, puncte,
+   eyebrow-uri), unde dă 13:1 pe alb.
 --------------------------------------------------------------------------- */
 
 @theme {
-  /* Suprafețe. Neutrele au o urmă de verde, ca să nu pară gri ales la
-     întâmplare lângă accent. */
-  --color-ink: #0e100e;
-  --color-ink-2: #171a17;
-  --color-ink-3: #22271f;
+  /* Suprafețe. Rampa închisă urcă în verde, nu în gri: „ink-2" e cardul pe
+     secțiune închisă, „ink-3" treapta următoare. */
+  --color-ink: #033825;
+  --color-ink-2: #05452d;
+  --color-ink-3: #0a5237;
   --color-paper: #ffffff;
   --color-paper-2: #f7f8f6;
 
@@ -33,19 +36,23 @@
   --color-fg-muted: #3c413c;
   /* Tonurile „faint" sunt folosite pe eyebrow-uri de 11px și pe note mici,
      deci trebuie să treacă AA la text normal, nu doar la text mare. Măsurat:
-     5.2:1 pe hârtie, 5.4:1 pe cerneală. */
+     5.2:1 pe hârtie. */
   --color-fg-faint: #6b716b;
 
-  /* Text pe cerneală */
+  /* Text pe verde închis. „faint" e mai deschis decât corespondentul de pe
+     hârtie fiindcă fundalul verde e mai luminos decât negrul de dinainte:
+     măsurat pe #033825 dă 5.1:1, adică trece AA la text normal. Cu vechiul
+     #8d968d ar fi picat la 4.3:1. */
   --color-on-ink: #f4f6f3;
   --color-on-ink-muted: #b4bcb4;
-  --color-on-ink-faint: #8d968d;
+  --color-on-ink-faint: #9aa39a;
 
   /* Accente */
   --color-verde: #033825;
   --color-verde-viu: #0a5237;
   --color-verde-slab: #eef3ef;
   --color-lime: #d8f2aa;
+  --color-lime-viu: #e6f8c8;
   --color-bruma: #c8dedd;
   --color-signal: #0a5237;
   --color-danger: #8f2b2b;
@@ -53,12 +60,12 @@
   /* Linii */
   --color-hairline: #e3e6e2;
   --color-hairline-strong: #cfd4ce;
-  --color-hairline-ink: #262b26;
-  --color-hairline-ink-strong: #333933;
+  --color-hairline-ink: #0d4a31;
+  --color-hairline-ink-strong: #17603f;
 
   /* Tipografie */
   --font-display: var(--font-newsreader), ui-serif, Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
 
   --radius-card: 0.75rem;

@@ -32,7 +32,7 @@ Sistemul e definit într-un singur loc, blocul `@theme` din [`app/globals.css`](
 - **Contrastul e măsurat, nu presupus.** Toate perechile de culori trec AA la text normal,
   inclusiv tonurile „faint" folosite pe eyebrow-uri de 11px.
 
-Tipografie: `Newsreader` pentru titluri, `Geist Sans` pentru text, `Geist Mono` pentru numere de
+Tipografie: `Newsreader` pentru titluri, `Archivo` pentru text, `Geist Mono` pentru numere de
 dosar. Toate trei acoperă complet diacriticele românești, inclusiv formele vechi cu cedilă
 (`ş`, `ţ`) pe care ECRIS le amestecă cu cele corecte.
 

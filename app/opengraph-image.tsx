@@ -32,7 +32,7 @@ export default async function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0e100e",
+          background: "#033825",
           padding: 72,
           fontFamily: "Newsreader",
         }}
@@ -93,8 +93,8 @@ export default async function Image() {
             gap: 16,
             fontFamily: "GeistMono",
             fontSize: 20,
-            color: "#8d968d",
-            borderTop: "1px solid #262b26",
+            color: "#9aa39a",
+            borderTop: "1px solid #0d4a31",
             paddingTop: 26,
           }}
         >
