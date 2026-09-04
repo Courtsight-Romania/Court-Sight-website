@@ -1,9 +1,13 @@
 /* Eroul cinematic: un film de 15 secunde legat de derulare.
-   Culorile vin din sistemul „Ink & Amber" al site-ului, nu din palete proprii. */
+   Culorile vin din sistemul „Verde și hârtie" al site-ului, nu din palete
+   proprii. */
 
+/* 500vh, nu 1200: filmul e același, doar se consumă de peste două ori mai
+   repede. La 1200vh vizitatorul avea de derulat douăsprezece ecrane până la
+   prima acțiune din pagină, iar cei mai mulți nu ajungeau acolo. */
 .hero {
   position: relative;
-  height: 1200vh;
+  height: 500vh;
   z-index: 2;
 }
 
@@ -121,9 +125,12 @@
   position: relative;
   max-width: min(560px, 86vw);
 }
+/* Culoarea e obligatorie, nu moștenită: `h2` nu ia nimic din `body`, deci fără
+   regula asta titlul cădea pe negrul implicit al hârtiei, peste film. */
 .band h2 {
   max-width: 15ch;
   font-size: clamp(34px, 5.4vw, 72px);
+  color: var(--color-on-ink);
 }
 .band p {
   margin-top: 18px;

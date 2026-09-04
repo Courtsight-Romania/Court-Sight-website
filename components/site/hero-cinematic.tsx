@@ -339,7 +339,7 @@ export function HeroCinematic() {
   }, []);
 
   return (
-    <section ref={heroRef} className={s.hero} aria-label="Prezentare">
+    <section ref={heroRef} id="hero-cinematic" className={s.hero} aria-label="Prezentare">
       <div ref={stageRef} className={s.stage}>
         <div ref={posterRef} className={s.poster} aria-hidden />
         <video ref={videoRef} preload="none" muted playsInline aria-hidden tabIndex={-1} />

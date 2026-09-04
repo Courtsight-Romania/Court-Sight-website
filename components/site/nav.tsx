@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/site/logo";
 import { ButtonLink } from "@/components/site/ui/button";
 import { Container } from "@/components/site/ui/primitives";
@@ -14,16 +14,90 @@ const LINKS = [
   { href: "#intrebari", label: "Întrebări" },
 ];
 
-export function Nav() {
+export interface NavProps {
+  cinematicHero?: boolean;
+}
+
+export function Nav({ cinematicHero = false }: NavProps = {}) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const hiddenRef = useRef(false);
+  const scrolledRef = useRef(false);
+  const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const heroEl = document.getElementById("hero-cinematic");
+    const hasCinematic = cinematicHero || !!heroEl;
+
+    const clearIdleTimer = () => {
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
+        idleTimerRef.current = null;
+      }
+    };
+
+    const updateHidden = (val: boolean) => {
+      if (hiddenRef.current !== val) {
+        hiddenRef.current = val;
+        setHidden(val);
+      }
+    };
+
+    const onScroll = () => {
+      clearIdleTimer();
+
+      const scrollY = window.scrollY;
+      const isScrolled = scrollY > 8;
+      if (isScrolled !== scrolledRef.current) {
+        scrolledRef.current = isScrolled;
+        setScrolled(isScrolled);
+      }
+
+      if (!hasCinematic) {
+        updateHidden(false);
+        return;
+      }
+
+      const hero = heroEl ?? document.getElementById("hero-cinematic");
+      if (!hero) {
+        updateHidden(false);
+        return;
+      }
+
+      const isScrubActive = hero.offsetHeight > window.innerHeight * 2;
+
+      if (!isScrubActive || open) {
+        updateHidden(false);
+        return;
+      }
+
+      const rect = hero.getBoundingClientRect();
+      const inHeroAnimation = scrollY > 10 && rect.bottom > window.innerHeight;
+
+      if (inHeroAnimation) {
+        // În timp ce derulezi în erou, ascunde navbar-ul ca să nu strice animația
+        updateHidden(true);
+
+        // Dacă te oprești din derulat în mijlocul animației, navbar-ul reapare
+        idleTimerRef.current = setTimeout(() => {
+          updateHidden(false);
+        }, 800);
+      } else {
+        // În afara animației eroului sau când ești complet sus, navbar-ul rămâne vizibil
+        updateHidden(false);
+      }
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      clearIdleTimer();
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [cinematicHero, open]);
 
   // Meniul mobil deschis blochează scroll-ul pe fundal.
   useEffect(() => {
@@ -36,8 +110,12 @@ export function Nav() {
   return (
     <header
       className={cn(
-        "tone-ink sticky top-0 z-50 bg-ink/90 text-on-ink backdrop-blur-md transition-colors",
-        scrolled ? "border-b border-hairline-ink" : "border-b border-transparent",
+        "tone-ink z-50 text-on-ink backdrop-blur-md transition-all duration-300 ease-out",
+        cinematicHero ? "fixed top-0 inset-x-0" : "sticky top-0",
+        scrolled ? "border-b border-hairline-ink bg-ink/90" : "border-b border-transparent bg-ink/80",
+        hidden
+          ? "-translate-y-full opacity-0 pointer-events-none"
+          : "translate-y-0 opacity-100 pointer-events-auto",
       )}
     >
       <Container>
