@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Logo } from "@/components/site/logo";
 import { APP_URL, CONTACT } from "@/lib/contact";
 import { Container } from "@/components/site/ui/primitives";
+import { ShaderFundal } from "@/components/site/shader-fundal";
 
 const COLUMNS = [
   {
@@ -27,6 +28,9 @@ const COLUMNS = [
 export function Footer() {
   return (
     <footer className="tone-ink grain relative isolate border-t border-hairline-ink bg-ink text-on-ink">
+      {/* Ultimul lucru de pe pagină. 30%: subsolul e plin de linkuri mici, iar
+          un fundal mai tare le-ar face marginile să tremure. */}
+      <ShaderFundal className="pointer-events-none absolute inset-0 -z-10 opacity-30" />
       <Container className="py-14 sm:py-16">
         <div className="grid gap-12 md:grid-cols-[minmax(0,1.4fr)_repeat(2,minmax(0,1fr))]">
           <div className="max-w-sm">

@@ -1,3 +1,4 @@
+import { ShaderFundal } from "@/components/site/shader-fundal";
 import { Container, Section, SectionHeader } from "@/components/site/ui/primitives";
 
 /* Pipeline-ul L0–L5 tradus pentru un avocat, nu pentru un inginer. Trei pași,
@@ -24,8 +25,13 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <Section id="cum-functioneaza" tone="ink">
-      <Container className="py-20 sm:py-28">
+    <Section id="cum-functioneaza" tone="ink" className="overflow-hidden">
+      {/* Singurul fundal animat din site. Stă la 45%: peste atât, petele de
+          verde deschis se apropie prea mult de culoarea textului și îngreunează
+          citirea unui paragraf care oricum cere atenție. */}
+      <ShaderFundal className="pointer-events-none absolute inset-0 -z-10 opacity-45" />
+
+      <Container className="relative py-20 sm:py-28">
         <SectionHeader
           tone="ink"
           eyebrow="Cum funcționează"
