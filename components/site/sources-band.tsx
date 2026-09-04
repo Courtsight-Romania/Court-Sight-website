@@ -1,4 +1,5 @@
-import { COURTS } from "@/lib/courts";
+import { Convergenta } from "@/components/site/convergenta";
+import { Harta } from "@/components/site/harta";
 import { Container, Section } from "@/components/site/ui/primitives";
 
 /* Aici, un site obișnuit ar pune logo-uri de clienți. Noi n-avem încă clienți,
@@ -13,41 +14,13 @@ const BADGES = [
   { label: "Găzduire în UE", note: "DPA cu fiecare client" },
 ];
 
-/* Banda derulantă are nevoie de conținutul duplicat ca să se poată bucla fără
-   salt. Prima copie rămâne în arborele de accesibilitate și în text — sunt
-   nume reale de instanțe, deci au valoare și pentru căutare; doar duplicatul e
-   ascuns, ca să nu fie citit de două ori. */
-function Track({ hidden }: { hidden?: boolean }) {
-  return (
-    <ul
-      aria-hidden={hidden || undefined}
-      className="flex shrink-0 items-center gap-8 pr-8 motion-safe:animate-[cs-marquee_92s_linear_infinite]"
-    >
-      {COURTS.map((c) => (
-        <li
-          key={c}
-          className="flex shrink-0 items-center gap-8 text-[0.9375rem] whitespace-nowrap text-fg-faint"
-        >
-          {c}
-          <span aria-hidden className="size-[3px] rounded-full bg-hairline-strong" />
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function Marquee() {
-  return (
-    <div className="relative flex overflow-hidden py-1 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-      <Track />
-      <Track hidden />
-    </div>
-  );
-}
-
 export function SourcesBand() {
   return (
     <Section id="surse" tone="paper-2" className="border-y border-hairline">
+      {/* Desenul stă înaintea frazei, nu după: cine derulează vede întâi
+          traseele adunându-se într-un punct, apoi citește ce tocmai a văzut. */}
+      <Convergenta />
+
       <Container className="py-14 sm:py-16">
         <p className="eyebrow text-center text-fg-faint">
           Date oficiale · acoperire națională
@@ -58,7 +31,7 @@ export function SourcesBand() {
         </p>
       </Container>
 
-      <Marquee />
+      <Harta />
 
       <Container className="py-14 sm:py-16">
         <ul className="grid gap-px overflow-hidden rounded-card border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
