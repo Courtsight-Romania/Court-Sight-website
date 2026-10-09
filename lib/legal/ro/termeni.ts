@@ -46,6 +46,7 @@ export const TERMENI_RO: LegalDoc = {
         "4.2. Serviciul este independent de instanțe, Ministerul Justiției, Consiliul Superior al Magistraturii și administratorii surselor. Nu oferă acces privilegiat la dosare nepublice și nu obține acte din dosarul electronic al instanței. Documentele Clientului sunt distincte de datele colectate din sursele publice.",
         "4.3. CourtSight nu prestează consultanță ori reprezentare juridică, nu depune acte și nu îndeplinește proceduri de citare sau comunicare în numele instanțelor. Furnizorul nu garantează un rezultat procesual. Rapoartele și corelările automate trebuie verificate înainte de utilizarea profesională.",
         "4.4. Furnizorul prestează serviciul cu diligență profesională, întreține aplicația și remediază erorile care îi sunt imputabile. Limitele surselor nu îl exonerează de obligația de a prelucra corect informațiile primite și de a afișa avertizările contractuale.",
+        "4.5. Integrările cu servicii terțe (de exemplu Google Calendar, Oblio sau SmartBill) se activează de Client și funcționează potrivit condițiilor furnizorilor respectivi. Clientul răspunde de conturile sale la acești furnizori. Furnizorul remediază erorile propriei integrări, dar nu răspunde pentru modificările, întreruperile sau deciziile serviciilor terțe pe care nu le controlează.",
       ],
     },
     {
@@ -216,7 +217,7 @@ export const TERMENI_RO: LegalDoc = {
         "20.1. Notificările contractuale se transmit la adresele din Comandă și de la art. 1. Pentru notificările care declanșează suspendarea, încetarea ori o schimbare materială, Furnizorul păstrează dovada comunicării și folosește un canal suplimentar dacă emailul este returnat.",
         "20.2. Contractul este guvernat de legea română. Părțile încearcă soluționarea amiabilă în 30 de zile de la notificarea detaliată a disputei, fără ca acest lucru să împiedice măsuri urgente sau introducerea unei acțiuni în termen.",
         "20.3. Litigiile sunt soluționate de instanțele competente potrivit legii. Acești Termeni nu stabilesc arbitraj obligatoriu.",
-        "20.4. Dacă o clauză este nevalabilă, celelalte rămân aplicabile. Neexercitarea imediată a unui drept nu înseamnă renunțare. Cesiunea contractului care schimbă furnizorul serviciului necesită informarea Clientului și respectarea condițiilor legale.",
+        "20.4. Părțile sunt independente; contractul nu creează o asociere, un mandat general sau un raport de muncă între ele. Dacă o clauză este nevalabilă, celelalte rămân aplicabile. Neexercitarea imediată a unui drept nu înseamnă renunțare. Cesiunea contractului care schimbă furnizorul serviciului necesită informarea Clientului și respectarea condițiilor legale.",
       ],
     },
   ],

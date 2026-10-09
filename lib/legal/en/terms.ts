@@ -46,6 +46,7 @@ export const TERMS_EN: LegalDoc = {
         "4.2. The service is independent of the courts, the Ministry of Justice, the Superior Council of Magistracy and the source administrators. It gives no privileged access to non-public cases and does not obtain documents from the court's electronic file.",
         "4.3. CourtSight does not provide legal advice or representation, does not file documents and does not perform service of process. The Provider does not guarantee any litigation outcome. Automated reports and correlations must be checked before professional use.",
         "4.4. The Provider performs the service with professional diligence, maintains the application and fixes errors attributable to it. Source limitations do not relieve it of the duty to process received information correctly and to display the contractual warnings.",
+        "4.5. Integrations with third-party services (for example Google Calendar, Oblio or SmartBill) are enabled by the Customer and operate under those providers' terms. The Customer is responsible for its accounts with them. The Provider fixes errors in its own integration but is not liable for changes, outages or decisions of third-party services it does not control.",
       ],
     },
     {
@@ -216,7 +217,7 @@ export const TERMS_EN: LegalDoc = {
         "20.1. Contractual notices are sent to the addresses in the Order and in Art. 1.",
         "20.2. The contract is governed by Romanian law. The parties try to settle disputes amicably within 30 days of a detailed notice, without preventing urgent measures or timely legal action.",
         "20.3. Disputes are settled by the courts with jurisdiction under the law. These Terms do not impose mandatory arbitration.",
-        "20.4. If a clause is invalid, the others remain in force. Failure to exercise a right immediately is not a waiver.",
+        "20.4. The parties are independent; the contract creates no partnership, general agency or employment relationship between them. If a clause is invalid, the others remain in force. Failure to exercise a right immediately is not a waiver.",
       ],
     },
   ],
