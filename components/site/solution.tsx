@@ -89,7 +89,7 @@ const FEATURES = [
   {
     mod: "verificare",
     title: "Căutare națională după nume",
-    body: "Un nume de firmă sau de persoană, toate litigiile din țară. Motorul generează singur variantele — ordinea nume/prenume, formele juridice, diacriticele scrise în ambele feluri — și le caută pe toate în paralel.",
+    body: "Un nume de firmă sau de persoană, căutat dintr-o dată în toate instanțele din țară. Motorul generează singur variantele — ordinea nume/prenume, formele juridice, diacriticele scrise în ambele feluri — și le caută pe toate în paralel.",
     mock: <MockSearch />,
   },
   {
@@ -107,18 +107,18 @@ const FEATURES = [
   {
     mod: "monitorizare",
     title: "Alertă pe termenul căii de atac",
-    body: "Când apare soluția la fond, primești un semnal că termenul a început să curgă. Nu îl calculăm în locul tău: termenul curge de la comunicare, iar data comunicării nu există în datele publice. E o alertă de tip „verifică”, niciodată o certitudine.",
+    body: "Când apare soluția la fond, primești un semnal să verifici comunicarea și termenul căii de atac. Nu îl calculăm în locul tău: începutul termenului depinde de procedură și de actele comunicate, care nu apar în datele publice. E o alertă de tip „verifică”, niciodată o certitudine.",
     caution: true,
   },
   {
     mod: "verificare",
     title: "Due diligence pe contrapartidă",
-    body: "Denumire sau CUI, iar în câteva secunde ai litigiile publice ale unei firme. Pentru persoane juridice datele sunt integral publice, deci fără complicațiile care apar la persoane fizice.",
+    body: "Denumire sau CUI, iar în câteva secunde ai litigiile publice ale unei firme. Rezultatele despre firme pot conține și nume de persoane fizice — reprezentanți, asociați — pe care le tratăm cu aceeași grijă.",
   },
   {
     mod: "monitorizare",
     title: "Raport automat către client",
-    body: "Statusul dosarului în limbaj non-juridic, generat din propriul timeline. Plus sincronizare în calendar și detectarea conflictelor: două termene, aceeași zi și oră, instanțe diferite.",
+    body: "Statusul dosarului în limbaj non-juridic, generat din propriul timeline. Plus termenele direct în Google Calendar sau în orice calendar prin abonament ICS, și detectarea conflictelor: două termene, aceeași zi și oră, instanțe diferite.",
   },
 ];
 

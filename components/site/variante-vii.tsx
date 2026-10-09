@@ -79,7 +79,7 @@ export function VarianteVii() {
       </ul>
 
       <p className="mt-4 text-[0.8125rem] leading-relaxed text-on-ink-faint">
-        Nimic nu pleacă din browser: variantele se calculează aici, pe telefonul
+        În această demonstrație nimic nu pleacă din browser: variantele se calculează aici, pe telefonul
         sau calculatorul tău. Poți scrie liniștit numele unui client real.
       </p>
     </div>

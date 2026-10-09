@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/site/logo";
 import { APP_URL, CONTACT } from "@/lib/contact";
+import { COMPANY, companyRegistration } from "@/lib/company";
 import { Container } from "@/components/site/ui/primitives";
 import { ShaderFundal } from "@/components/site/shader-fundal";
 
@@ -21,6 +22,7 @@ const COLUMNS = [
       { href: "/termeni", label: "Termeni și condiții" },
       { href: "/confidentialitate", label: "Politica de confidențialitate" },
       { href: "/gdpr", label: "GDPR" },
+      { href: "/en/privacy", label: "Privacy (English)" },
     ],
   },
 ];
@@ -64,7 +66,13 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-hairline-ink pt-7 text-sm text-on-ink-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} CourtSight. Toate drepturile rezervate.</p>
+          <div className="space-y-1">
+            <p>© {new Date().getFullYear()} {COMPANY.name}. Toate drepturile rezervate.</p>
+            {/* Identificarea furnizorului, cerută de Legea 365/2002 și verificată de Google. */}
+            <p className="text-[0.8125rem]">
+              {COMPANY.address} · {companyRegistration("ro")}
+            </p>
+          </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <a
               href={`mailto:${CONTACT.email}`}

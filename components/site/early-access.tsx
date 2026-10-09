@@ -206,8 +206,8 @@ export function EarlyAccess() {
                     htmlFor={f("consim")}
                     className="text-[0.8125rem] leading-relaxed text-on-ink-muted"
                   >
-                    Sunt de acord să fiu contactat despre pilotul CourtSight. Datele nu ajung la
-                    nimeni altcineva — vezi{" "}
+                    Solicit să fiu contactat pentru accesul la pilotul CourtSight. Datele mele
+                    sunt folosite numai pentru această cerere, cum descrie{" "}
                     <Link
                       href="/confidentialitate"
                       className="text-on-ink underline underline-offset-4"

@@ -12,7 +12,7 @@ export const FAQ = [
   },
   {
     q: "Calculați exact termenul de apel?",
-    a: "Nu, și nu vom face asta. Termenul curge de la data comunicării hotărârii, iar data comunicării nu există în datele publice. Ce putem face este să detectăm momentul în care apare soluția și să te anunțăm că termenul a început să curgă, ca să verifici. Orice sistem care îți afișează o zi exactă pe baza datelor publice îți vinde o certitudine pe care nu o are.",
+    a: "Nu, și nu vom face asta. Începutul termenului depinde de procedură și de actele comunicate, iar data comunicării nu există în datele publice. Ce putem face este să detectăm momentul în care apare soluția și să te anunțăm, ca să verifici comunicarea și termenul. Orice sistem care îți afișează o zi exactă pe baza datelor publice îți vinde o certitudine pe care nu o are.",
   },
   {
     q: "Pot vedea actele din dosar?",
@@ -21,6 +21,10 @@ export const FAQ = [
   {
     q: "Ce se întâmplă cu datele clienților mei?",
     a: "Semnăm un acord de prelucrare a datelor cu fiecare client, găzduim în Uniunea Europeană și aplicăm retenție scurtă asupra rezultatelor de căutare care nu au fost selectate — pentru că acelea conțin date despre terți care nu au nicio legătură cu tine. Modelul e construit în jurul dosarelor pe care le urmărești efectiv, nu în jurul colectării nediscriminate.",
+  },
+  {
+    q: "Se sincronizează cu Google Calendar?",
+    a: "Da, opțional. Din Setări îți conectezi contul Google, iar CourtSight creează calendare separate — câte unul pentru fiecare avocat din cabinet — și scrie în ele termenele dosarelor urmărite. Cerem acces numai la calendarele create de noi: nu vedem și nu modificăm restul agendei tale. Poți deconecta oricând, iar calendarele create de noi se șterg. Detaliile sunt în politica de confidențialitate, la secțiunea despre datele din contul Google. Pentru Apple Calendar sau Outlook există abonament ICS.",
   },
   {
     q: "Când este disponibil?",

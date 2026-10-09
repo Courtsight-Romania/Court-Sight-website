@@ -44,8 +44,8 @@ export function Hero() {
 
             <p className="mt-6 text-lg leading-relaxed text-on-ink-muted text-pretty">
               Motor de căutare și monitorizare peste dosarele aflate pe rolul instanțelor din
-              România. Scrii un nume, primești toate litigiile din țară — cu toleranță la felul
-              în care e scris. Aceeași căutare, lăsată pornită, devine sistem de alertă.
+              România. Scrii un nume și cauți dintr-o dată în toate instanțele din țară — cu
+              toleranță la felul în care e scris. Aceeași căutare, lăsată pornită, devine sistem de alertă.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">

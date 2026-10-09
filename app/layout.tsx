@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Newsreader } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL } from "@/lib/contact";
 import { FAQ } from "@/lib/faq";
 import "./globals.css";
@@ -25,7 +23,7 @@ const archivo = Archivo({
 
 const TITLE = "CourtSight — căutare și monitorizare a dosarelor din instanțele României";
 const DESCRIPTION =
-  "Scrii un nume, primești toate litigiile din țară. Monitorizare automată a dosarelor aflate pe rolul instanțelor din România, pe date publice oficiale.";
+  "Scrii un nume și cauți dintr-o dată în toate instanțele din țară. Monitorizare automată a dosarelor aflate pe rolul instanțelor din România, pe date publice oficiale.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -99,8 +97,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
